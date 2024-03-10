@@ -1,0 +1,34 @@
+{
+    "name": "{{cookiecutter.project_name}} Container",
+    "dockerFile": "Dockerfile",
+    "context": "..",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/zsh",
+        "python.pythonPath": "/home/user/venv/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.autopep8Path": "/home/user/venv/bin/autopep8",
+        "python.formatting.blackPath": "/home/user/venv/bin/black",
+        "python.formatting.yapfPath": "/home/user/venv/bin/yapf",
+        "python.linting.banditPath": "/home/user/venv/bin/bandit",
+        "python.linting.flake8Path": "/home/user/venv/bin/flake8",
+        "python.linting.mypyPath": "/home/user/venv/bin/mypy",
+        "python.linting.pycodestylePath": "/home/user/venv/bin/pycodestyle",
+        "python.linting.pydocstylePath": "/home/user/venv/bin/pylama",
+        "python.linting.pylintPath": "/home/user/venv/bin/pylint"
+    },
+    "extensions": [
+        "ms-python.python", 
+        "ms-toolsai.jupyter", 
+        "ms-python.pylint", 
+        "GitHub.copilot-chat",
+        "GitHub.copilot"],
+    "remoteUser": "user",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/home/user/dbg_sandbox,type=bind,consistency=cached",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/user/.ssh,type=bind"
+    ],
+    "runArgs": ["-v", "/var/run/docker.sock:/var/run/docker.sock"],
+    "workspaceFolder": "/home/user/{{cookiecutter.project_name}}",
+    "postCreateCommand": "sleep 5 && mkdir -p /home/user/.ssh && sudo chown -R user:user /home/user/.ssh && sudo chmod 700 /home/user/.ssh && sudo chmod 600 /home/user/.ssh/*",
+}

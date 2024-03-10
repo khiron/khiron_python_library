@@ -1,0 +1,12 @@
+{
+    "project_name": "my_python_project",
+    "library_name": "mylibrary",
+    "author_name": "Richard Morris",
+    "email": "richard.morris@anu.edu.au",
+    "version": "0.1.0",
+    "description": "A short description of the project.",
+    "url": "https://github.com/khiron/my_python_project",
+    "function_name": "my_function",
+    "function_description": "A short description of the function."
+  }
+  
