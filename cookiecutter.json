@@ -9,6 +9,6 @@
     "function_name": "my_function",
     "function_description": "A short description of the function.",
     "PyPi_username": "__token__",
-    "PyPi_password": "YOUR_TOKEN_HERE",
+    "PyPi_password": "YOUR_TOKEN_HERE"
   }
   
