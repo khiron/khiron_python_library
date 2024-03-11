@@ -5,7 +5,7 @@ def test_{{cookiecutter.library_name}}_version():
     assert __version__ == '{{cookiecutter.version}}'
 
 def test_{{cookiecutter.library_name}}_author():
-    assert __author__ == '{{cookiecutter.author}}'
+    assert __author__ == '{{cookiecutter.author_name}}'
 
 def test_{{cookiecutter.library_name}}_email():
     assert __email__ == '{{cookiecutter.email}}'
