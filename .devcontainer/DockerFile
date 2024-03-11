@@ -53,6 +53,15 @@ RUN echo "source /tmp/zoxide_init.zsh" >> ~/.zshrc
 COPY ../{{cookiecutter.library_name}}/requirements.txt .
 RUN ~/venv/bin/pip install -r requirements.txt
 
-# Preload commands into the shell's history
-RUN echo 'cd /home/user/{{cookiecutter.project_name}}/{{cookiecutter.library_name}} && flit install -s --python $(which python)' >> ~/.zsh_history
+# Add .pypirc file with PyPI token
+RUN echo "[pypi]" >> /home/user/.pypirc && \
+    echo "username = {{cookiecutter.PyPi_username}}" >> /home/user/.pypirc && \
+    echo "password = {{cookiecutter.PyPi_password}}" >> /home/user/.pypirc && \
+    chown user:user /home/user/.pypirc && \
+    chmod 600 /home/user/.pypirc
+
+# Preload common commands into the shell's history
 RUN echo 'ssh -T git@github.com' >> ~/.zsh_history
+RUN echo 'cd /home/user/{{cookiecutter.project_name}}/{{cookiecutter.library_name}} && pytest >> ~/.zsh_history'
+RUN echo 'cd /home/user/{{cookiecutter.project_name}}/{{cookiecutter.library_name}} && flit install -s --python $(which python)' >> ~/.zsh_history
+

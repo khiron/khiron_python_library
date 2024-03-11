@@ -7,6 +7,8 @@
     "description": "A short description of the project.",
     "url": "https://github.com/khiron/my_python_project",
     "function_name": "my_function",
-    "function_description": "A short description of the function."
+    "function_description": "A short description of the function.",
+    "PyPi_username": "__token__",
+    "PyPi_password": "YOUR_TOKEN_HERE",
   }
   
