@@ -10,7 +10,6 @@ This project was generated from [khiron_python_library](https://github.com/khiro
 - Packaging with [Flit](https://flit.readthedocs.io/en/latest/) for simplicity and ease of use.
 - Pre-configured development container setup for Visual Studio Code.
 - Integrated testing setup with pytest.
-- Continuous Integration (CI) setup with GitHub Actions (optional).
 
 ## Getting Started
 
