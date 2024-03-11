@@ -1,3 +1,5 @@
+import pytest
+from {{cookiecutter.library_name}} import __version__, __author__, __email__, __doc__, __url__
 def test_example():
     assert True
 
