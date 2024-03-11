@@ -9,4 +9,4 @@ __email__ = '{{cookiecutter.email}}'
 __doc__ = '{{cookiecutter.description}}'
 __url__ = '{{cookiecutter.url}}'
 
-from .{{function_name}} import {{function_name}}
+from .{{cookiecutter.function_name}} import {{cookiecutter.function_name}}
